@@ -1,13 +1,15 @@
 
 ## For programming assignment #2
-## This script contains two functions designed to build and use an R 'object' of sorts to deal with matrix inversion. The 'object' is an R list 
-## that contains R functions as elements of the list. These functions allow the user to set and get values of a matrix and to calculate the 
-## inverse of the matrix. Since inversion of a matrix can be time consuming for large matrices, the functions cache the value of the inverse a
-## and provide another function to simply get the cached value if the inverse already has been calclated.
-## The funtion makes sure to clear the value of the inverse whenever a new matrix is assigned so that a stored value of the inverse is always
-## consistent with the stored value of the matrix.
+## This script contains two functions designed to build and use an R 'object' of sorts to deal with matrix inversion. 
+# The 'object' is an R list that contains R functions as elements of the list. These functions allow the user to set 
+## and get values of a matrix and to calculate the inverse of the matrix. Since inversion of a matrix can be time 
+## consuming for large matrices, the functions cache the value of the inverse a and provide another function to 
+## simply get the cached value if the inverse already has been calclated.
 ##
-## A short snippet of code to test these functions is stored in the same repository as this script, called cacheMatrix_test.
+## The funtion makes sure to clear the value of the inverse whenever a new matrix is assigned so that a stored value 
+## of the inverse is always consistent with the stored value of the matrix.
+##
+## A short snippet of code to test these functions is stored in the same repository as this script, called cacheMatrix_test.R
 
 
 ## The function below, `makeCacheMatrix`, creates a "matrix" object of sorts. This object is an R list that 
