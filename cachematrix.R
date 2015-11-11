@@ -1,5 +1,8 @@
 
 ## For programming assignment #2
+## see following link for details:
+## https://class.coursera.org/rprog-034/human_grading/view/courses/975108/assessments/3/submission
+##
 ## This script contains two functions designed to build and use an R 'object' of sorts to deal with matrix inversion. 
 # The 'object' is an R list that contains R functions as elements of the list. These functions allow the user to set 
 ## and get values of a matrix and to calculate the inverse of the matrix. Since inversion of a matrix can be time 
@@ -23,8 +26,9 @@ makeCacheMatrix <- function(x = matrix()) {
         
         ## initialize value of inverse        
         myInverse <<- NaN
-
-        setMatrix<- function(myMatrix){
+        myMatrix <<- NaN
+        
+        setMatrix<- function(){
         ## Set value of matrix passed by user AND initialize inverse as NaN
         ## by initializing value of inverse as NaN will ensure there is never a disconnect between a new matrix and an inverse from a 
         ## previous matrix
@@ -34,9 +38,9 @@ makeCacheMatrix <- function(x = matrix()) {
                 
         getMatrix <- function() myMatrix ## function to return value of matrix chached by user
         
-        setInverse <- function(y = matrix()) {
+        setInverse <- function(z = matrix()) {
         ## set value of inverse passed by user        
-                myInverse <<- y
+                myInverse <<- z
         }
         
         getInverse <- function() myInverse ## function to return value of inverse cached by user
@@ -57,11 +61,11 @@ cacheSolve <- function(x, ...) {
         
         matrixInverse <- x$getInverse()
         
-        if(!is.nan(matrixInverse)) {
+        if(is.matrix(matrixInverse)) {
                 message("getting inverse from cache")
                 return(matrixInverse)
         } else {
-                message("inverse not cached. CCalculating inverse")
+                message("inverse not cached. Calculating inverse")
                 matrixInverse<- solve(x$getMatrix())
                 x$setInverse(matrixInverse)
                 matrixInverse
